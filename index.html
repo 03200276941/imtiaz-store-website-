@@ -1,0 +1,1774 @@
+<html>
+<head>
+    <title>Imtiaz</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+           * {
+            list-style: none;
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .top-bar {
+            background-color: #d32f2f;
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 14px;
+        }
+        .header {
+            display: flex;
+            flex-direction: column;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .header-left img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .header-left .location {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .header-left .location i {
+            margin-right: 5px;
+        }
+        .header-left .search-bar {
+            position: relative;
+        }
+        .header-left .search-bar input {
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            width: 300px;
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+        .header-right a {
+            margin-left: 20px;
+            color: black;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .header-right a i {
+            margin-right: 5px;
+        }
+        .header-right .cart {
+            position: relative;
+        }
+        .header-right .cart .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #0d47a1;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 12px;
+        }
+        .header-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .header-bottom .contact-info {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+        .header-bottom .contact-info i {
+            margin-right: 5px;
+        }
+        .header-bottom .welcome {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+        .header-bottom .categories {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+        }
+        .header-bottom .categories select {
+            padding: 5px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .carousel {
+            display: flex;
+            animation: scroll 20s linear infinite;
+        }
+        .banner1, .banner2, .banner3, .banner4, .banner5, .banner6 {
+            width: 100%;
+            height: 250px;
+            background-color: #d32f2f;
+            border-radius: 32px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .banner1 {
+            background-image: url(https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fsplash%2F1670917004.jpg&w=1920&q=90);
+        }
+        .banner2 {
+            background-image: url(https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fsplash%2F1671107946.png&w=1920&q=90);
+        }
+        .banner3 {
+            background-image: url(https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fsplash%2F1670937361.jpg&w=1920&q=90);
+        }
+        .banner4 {
+            background-image: url(https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fsplash%2F1671107960.png&w=1920&q=90);
+        }
+        .banner5 {
+            background-image: url(https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fsplash%2F1670937329.jpg&w=1920&q=90);
+        }
+        .banner6 {
+            background-image: url(https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fsplash%2F1671107973.png&w=1920&q=90);
+        }
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        .category, .carousel-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            flex: 0 0 calc(20% - 20px);
+            box-sizing: border-box;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .category:hover, .carousel-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .category img, .carousel-item img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .category p, .carousel-item h3 {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+        .carousel-item p {
+            font-size: 14px;
+            color: #666;
+        }
+        .carousel-item .price {
+            font-size: 18px;
+            color: #d32f2f;
+            margin-top: 10px;
+        }
+        .carousel-item .cart-btn {
+            background-color: #0d47a1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .carousel-item .favorite {
+            color: #d32f2f;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+       
+        @media (max-width: 430px) {
+    body {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+    .header h1 {
+        font-size: 50px;
+    }
+    .header-left {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .header-right {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .carousel-container {
+        margin: 0;
+    }
+    .carousel {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .category, .carousel-item {
+        flex: 1 1 calc(50% - 10px); /* Two elements per row */
+        margin: 5px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .banner1, .banner2, .banner3, .banner4, .banner5, .banner6 {
+        height: 200px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        width: calc(50% - 10px); /* Adjust to fit two in a row */
+    }
+    .category img, .carousel-item img {
+        max-width: 100%;
+        height: auto;
+    }
+    .header-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .header-bottom .categories select {
+        width: calc(100% - 20px);
+    }
+    .carousel-item .cart-btn {
+        width: 100%;
+        padding: 10px;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .footer-logo img {
+            width: 150px;
+        }
+        .footer-section {
+            flex: 1;
+            margin: 0 20px;
+        }
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .footer-section p,
+        .footer-section a {
+            font-size: 14px;
+            color: #ccc;
+            text-decoration: none;
+        }
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+        .footer-social-icons {
+            display: flex;
+            gap: 10px;
+        }
+        .footer-social-icons a {
+            color: #ccc;
+            font-size: 20px;
+        }
+        .footer-social-icons a:hover {
+            color: #fff;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        Express orders will be delivered the same day, express orders after 6pm will be considered as standard orders
+    </div>
+    <div class="header">
+        <div class="header-top">
+            <div class="header-left">
+                <img alt="Imtiaz logo" height="40" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fblinkximtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Flogo%2F1656401353.png&w=1920&q=90" width="100"/>
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Deliver to</span>
+                    <span style="margin-left: 5px;">Karachi Pakistan</span>
+                </div>
+                <div class="search-bar">
+                    <input placeholder="Looking for something? Start here..." type="text"/>
+                </div>
+            </div>
+            <div class="header-right">
+                <a href="#">Home</a>
+                <a href="#"><i class="fas fa-user"></i>Login</a>
+                <a class="cart" href="#"><i class="fas fa-shopping-cart"></i>Cart</a>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="categories">
+                <select>
+                    <option>Categories</option>
+                    <option>Fresh</option>
+                    <option>Bakery</option>
+                    <option>Snacks & Confectionary</option>
+                    <option>Beverages</option>
+                    <option>Tea & Coffee</option>
+                    <option>Edible Oils</option>
+                    <option>Dairy</option>
+                    <option>Frozen Foods</option>
+                    <option>Household</option>
+                    <option>Personal Care</option>
+                </select>
+            </div>
+            <div class="welcome">
+                <span>Welcome to Imtiaz</span>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-phone"></i>03200276941
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-envelope"></i>Bakhtawark085@gmail.com
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Shop by Category</h1>
+        </div>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="category">
+                    <img alt="Fresh category with various fresh vegetables and fruits" height="200" src="https://storage.googleapis.com/a1aa/image/E90R8LprZOL6PNA4IFiyklFngSftOB0QQmoaXsfh3xsVQv5TA.jpg" width="200"/>
+                    <p>Fresh</p>
+                </div>
+                <div class="category">
+                    <img alt="Bakery category with cupcakes and bread" height="200" src="https://storage.googleapis.com/a1aa/image/sUBT5diNRMYZEJSwyc99oIF0y5PeZDZSaDHS7TC64lXNo38JA.jpg" width="200"/>
+                    <p>Bakery</p>
+                </div>
+                <div class="category">
+                    <img alt="Snacks &amp; Confectionary category with various snacks" height="200" src="https://storage.googleapis.com/a1aa/image/3D5XfThtRy0ibizLJ3WuvUUyVSJXCkluwGagfTNL61TXQv5TA.jpg" width="200"/>
+                    <p>Snacks &amp; Confectionary</p>
+                </div>
+                <div class="category">
+                    <img alt="Beverages category with various drinks" height="200" src="https://storage.googleapis.com/a1aa/image/ShygkmHZSQYSGRDeX1PPHVm5XFUtyukzf0hPMERP8wwcQv5TA.jpg" width="200"/>
+                    <p>Beverages</p>
+                </div>
+                <div class="category">
+                    <img alt="Tea &amp; Coffee category with tea and coffee products" height="200" src="https://storage.googleapis.com/a1aa/image/4pHxO4DZP3azEVmeOv2ktpMOnhPWdMC7mI6JAd2boQKMo38JA.jpg" width="200"/>
+                    <p>Tea &amp; Coffee</p>
+                </div>
+                <div class="category">
+                    <img alt="Edible Oils category with various oil products" height="200" src="https://storage.googleapis.com/a1aa/image/lYftw6cbUb0iRyVEE35XpnZ1pnSxXB1lBd9BVrTT2m1No38JA.jpg" width="200"/>
+                    <p>Edible Oils</p>
+                </div>
+                <div class="category">
+                    <img alt="Dairy category with various dairy products" height="200" src="https://storage.googleapis.com/a1aa/image/3D5XfThtRy0ibizLJ3WuvUUyVSJXCkluwGagfTNL61TXQv5TA.jpg" width="200"/>
+                    <p>Dairy</p>
+                </div>
+                <div class="category">
+                    <img alt="Frozen Foods category with various frozen products" height="200" src="https://storage.googleapis.com/a1aa/image/ShygkmHZSQYSGRDeX1PPHVm5XFUtyukzf0hPMERP8wwcQv5TA.jpg" width="200"/>
+                    <p>Frozen Foods</p>
+                </div>
+                <div class="category">
+                    <img alt="Household category with various household products" height="200" src="https://storage.googleapis.com/a1aa/image/4pHxO4DZP3azEVmeOv2ktpMOnhPWdMC7mI6JAd2boQKMo38JA.jpg" width="200"/>
+                    <p>Household</p>
+                </div>
+                <div class="category">
+                    <img alt="Personal Care category with various personal care products" height="200" src="https://storage.googleapis.com/a1aa/image/lYftw6cbUb0iRyVEE35XpnZ1pnSxXB1lBd9BVrTT2m1No38JA.jpg" width="200"/>
+                    <p>Personal Care</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Fresh</h1>
+        </div>
+        <div class="banner1"></div>
+        
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Confectionary</h1>
+        </div>
+        <div class="banner2"></div>
+        
+    </div>
+    <div class="container">
+        <div class="header">
+        </div>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item active">
+                    <img alt="Hilal Bake Time Plain Cake" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fgallery%2FCON170000593.jpg&w=1920&q=90" width="200"/>
+                    <h3>Hilal Bake Time Plain Cake ...</h3>
+                    <div class="price">Rs. 205.00</div>
+                    <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                    <i class="fas fa-heart favorite"></i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="Candyland Jelly ABC Party Pack" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fgallery%2FCON170001501.jpg&w=1920&q=90" width="200"/>
+                    <h3>Candyland Jelly ABC Party...</h3>
+                    <div class="price">Rs. 42.00</div>
+                    <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                    <i class="fas fa-heart favorite"></i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="LU Wheatable Sugar Free F/P" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fgallery%2FCON170001254.jpg&w=1920&q=90" width="200"/>
+                    <h3>LU Wheatable Sugar Free F...</h3>
+                    <div class="price">Rs. 89.00</div>
+                    <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                    <i class="fas fa-heart favorite"></i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="Hilal Cake Rusk Mini 6'S Box" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fgallery%2FCON170002402.jpg&w=1920&q=90" width="200"/>
+                    <h3>Hilal Cake Rusk Mini 6'S Box</h3>
+                    <div class="price">Rs. 155.00</div>
+                    <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                    <i class="fas fa-heart favorite"></i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="Deemah Candy Cute'e Mini 100g" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fgallery%2FCON170000239.jpg&w=1920&q=90" width="200"/>
+                    <h3>Deemah Candy Cute'e Min...</h3>
+                    <div class="price">Rs. 115.00</div>
+                    <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                    <i class="fas fa-heart favorite"></i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="Hilal Ding Dong" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fgallery%2FCON170002403.jpg&w=1920&q=90" width="200"/>
+                    <h3>Hilal Ding Dong</h3>
+                    <div class="price">Rs. 102.00</div>
+                    <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                    <i class="fas fa-heart favorite"></i>
+                </div>
+                 <div class="carousel-item active">
+                <img alt="Hilal Bake Time Plain Cake" height="150" src=https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fdish_image%2F1674555221.jpg&w=1920&q=90" width="200"/>
+                <h3>Hilal Bake Time Plain Cake ...</h3>
+                <div class="price">Rs. 205.00</div>
+                <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                <i class="fas fa-heart favorite"></i>
+            </div>
+            <div class="carousel-item">
+                <img alt="Candyland Jelly ABC Party Pack" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fdish_image%2F1674559170.jpeg&w=1920&q=90" width="200"/>
+                <h3>Candyland Jelly ABC Party...</h3>
+                <div class="price">Rs. 42.00</div>
+                <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                <i class="fas fa-heart favorite"></i>
+            </div>
+            <div class="carousel-item">
+                <img alt="LU Wheatable Sugar Free F/P" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fgallery%2FCON170002402.jpg&w=1920&q=90" width="200"/>
+                <h3>LU Wheatable Sugar Free F...</h3>
+                <div class="price">Rs. 89.00</div>
+                <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                <i class="fas fa-heart favorite"></i>
+            </div>
+            <div class="carousel-item">
+                <img alt="Hilal Cake Rusk Mini 6'S Box" height="150" src="data:image/jpeg;base64,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" width="200"/>
+                <h3>Hilal Cake Rusk Mini 6'S Box</h3>
+                <div class="price">Rs. 155.00</div>
+                <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                <i class="fas fa-heart favorite"></i>
+            </div>
+            <div class="carousel-item">
+                <img alt="Deemah Candy Cute'e Mini 100g" height="150" src="data:image/jpeg;base64,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" width="200"/>
+                <h3>Deemah Candy Cute'e Min...</h3>
+                <div class="price">Rs. 115.00</div>
+                <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                <i class="fas fa-heart favorite"></i>
+            </div>
+            <div class="carousel-item">
+                <img alt="Hilal Ding Dong" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fgallery%2FCON170000651.jpg&w=1920&q=90" width="200"/>
+                <h3>Hilal Ding Dong</h3>
+                <div class="price">Rs. 102.00</div>
+                <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                <i class="fas fa-heart favorite"></i>
+            </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="header">
+                <h1>Edible Grocery</h1>
+            </div>
+            <div class="banner3"></div>
+
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item active">
+                        <img alt="Hilal Bake Time Plain Cake" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fsection_image%2F1669205917.jpg&w=1920&q=90">
+                        <h3>Candyland Jelly ABC Party...</h3>
+                        
+                        <div class="price">Rs. 205.00</div>
+
+                        <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                        <i class="fas fa-heart favorite"></i>
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Candyland Jelly ABC Party Pack" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fgallery%2FBEV110000235.jpg&w=1920&q=90" width="200"/>
+                        <h3>Candyland Jelly ABC Party...</h3>
+                        <div class="price">Rs. 42.00</div>
+                        <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                        <i class="fas fa-heart favorite"></i>
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="LU Wheatable Sugar Free F/P" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fdish_image%2F1700662501.jpg&w=1920&q=90">
+                        <h3>Nescafe Coffee Classic Local Round 200g</h3>
+                        <div class="price">Rs. 8900.00</div>
+                        <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                        <i class="fas fa-heart favorite"></i>
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Hilal Cake Rusk Mini 6'S Box" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fgallery%2FBEV110000224.jpg&w=1920&q=90" width="200"/>
+                        <h3>Nescafe Coffee Classic Local 100g</h3>
+                        <div class="price">Rs. 155.00</div>
+                        <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                        <i class="fas fa-heart favorite"></i>
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Deemah Candy Cute'e Mini 100g" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fgallery%2FDAI180000301.jpg&w=1920&q=90" width="200"/>
+                        <h3>Everyday Tea Whitener Mixed Tea 560g</h3>
+                        <div class="price">Rs. 115.00</div>
+                        <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                        <i class="fas fa-heart favorite"></i>
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Hilal Ding Dong" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fgallery%2FDAI180000294.jpg&w=1920&q=90" width="200"/>
+                        <h3>Everyday Tea Whitener 850g</h3>
+                        <div class="price">Rs. 102.00</div>
+                        <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                        <i class="fas fa-heart favorite"></i>
+                    </div>
+                     <div class="carousel-item active">
+                    <img alt="Hilal Bake Time Plain Cake" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fgallery%2FDAI180000300.jpg&w=1920&q=90" width="200"/>
+                    <h3>Everyday Tea Whitener Mixed Tea 230g ...</h3>
+                    <div class="price">Rs. 205.00</div>
+                    <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                    <i class="fas fa-heart favorite"></i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="Candyland Jelly ABC Party Pack" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fgallery%2FBEV110001436.jpg&w=1920&q=90" width="200"/>
+                    <h3>Indocafe Coffee Cappuccino Sachet 25G</h3>
+                    <div class="price">Rs. 42.00</div>
+                    <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                    <i class="fas fa-heart favorite"></i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="LU Wheatable Sugar Free F/P" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fgallery%2FBEV110001114.jpg&w=1920&q=90" width="200"/>
+                    <h3>Tapal Green Tea Bags Lemon 30's</h3>
+                    <div class="price">Rs. 89.00</div>
+                    <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                    <i class="fas fa-heart favorite"></i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="Hilal Cake Rusk Mini 6'S Box" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fgallery%2FBEV110001105.jpg&w=1920&q=90">
+                    <h3>Tapal Green Tea LemonGrass Jar 100g</h3>
+                    <div class="price">Rs. 155.00</div>
+                    <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                    <i class="fas fa-heart favorite"></i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="Deemah Candy Cute'e Mini 100g" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fgallery%2FBEV110001122.jpg&w=1920&q=90">
+                    <h3>Tapal Green Tea Bags Mint 30'S</h3>
+                    <div class="price">Rs. 115.00</div>
+                    <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                    <i class="fas fa-heart favorite"></i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="Hilal Ding Dong" height="150" src="https://shop.imtiaz.com.pk/_next/image?url=https%3A%2F%2Fimtiaz-i.s3.ap-southeast-1.amazonaws.com%2F55126%2Fgallery%2FDAI180000299.jpg&w=1920&q=90" width="200"/>
+                    <h3>Everyday Tea Whitener 1200g</h3>
+                    <div class="price">Rs. 102.00</div>
+                    <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                    <i class="fas fa-heart favorite"></i>
+                </div>
+                </div>
+                   
+            </div>
+            <div class="container">
+                <div class="header">
+                    <h1>Baby World</h1>
+                </div>
+                <div class="banner4"></div>
+    
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-item active">
+                            <img alt="A pack of baby diapers with 24 pieces" height="150"
+                                src="https://storage.googleapis.com/a1aa/image/n6IHkzJn4j7xEho5lZ2K3qUiQ5mAsUeMT8ozn1LUleGOuz5TA.jpg"
+                                width="200" />
+                            <h3>
+                                Baby Diapers Small Pack - 24 pcs
+                            </h3>
+                            <div class="price">
+                                Rs. 850.00
+                            </div>
+                            <button class="cart-btn">
+                                <i class="fas fa-shopping-cart">
+                                </i>
+                            </button>
+                            <i class="fas fa-heart favorite">
+                            </i>
+                        </div>
+                        <div class="carousel-item">
+                            <img alt="A bottle of gentle baby shampoo with 200ml capacity" height="150"
+                                src="https://storage.googleapis.com/a1aa/image/wrRExe3W3bTsPynixD1UtSJ2ghE6TCYXxwSz3XczJhfSuz5TA.jpg"
+                                width="200" />
+                            <h3>
+                                Gentle Baby Shampoo 200ml
+                            </h3>
+                            <div class="price">
+                                Rs. 400.00
+                            </div>
+                            <button class="cart-btn">
+                                <i class="fas fa-shopping-cart">
+                                </i>
+                            </button>
+                            <i class="fas fa-heart favorite">
+                            </i>
+                        </div>
+                        <div class="carousel-item">
+                            <img alt="A bottle of baby moisturizing lotion with 300ml capacity" height="150"
+                                src="https://storage.googleapis.com/a1aa/image/baGfrf7fvEOPdpsf1y1ENeEHfGB5e3tTd0mPbnJddrJVM358JA.jpg"
+                                width="200" />
+                            <h3>
+                                Baby Moisturizing Lotion 300ml
+                            </h3>
+                            <div class="price">
+                                Rs. 550.00
+                            </div>
+                            <button class="cart-btn">
+                                <i class="fas fa-shopping-cart">
+                                </i>
+                            </button>
+                            <i class="fas fa-heart favorite">
+                            </i>
+                        </div>
+                        <div class="carousel-item">
+                            <img alt="A 250ml anti-colic baby feeding bottle" height="150"
+                                src="https://storage.googleapis.com/a1aa/image/FwVH2mJvXLpjG9o7KyKvZDao8NMkHILw4t8CVC1yqSsl7ceJA.jpg"
+                                width="200" />
+                            <h3>
+                                Anti-Colic Baby Feeding Bottle - 250ml
+                            </h3>
+                            <div class="price">
+                                Rs. 650.00
+                            </div>
+                            <button class="cart-btn">
+                                <i class="fas fa-shopping-cart">
+                                </i>
+                            </button>
+                            <i class="fas fa-heart favorite">
+                            </i>
+                        </div>
+                        <div class="carousel-item">
+                            <img alt="A pack of 80 soft baby wipes" height="150"
+                                src="https://storage.googleapis.com/a1aa/image/4GiRhjTAotq1N5DyWdXLN7fluzhQuhT0EpUgRZ8W36EK358JA.jpg"
+                                width="200" />
+                            <h3>
+                                Soft Baby Wipes - 80 Sheets
+                            </h3>
+                            <div class="price">
+                                Rs. 300.00
+                            </div>
+                            <button class="cart-btn">
+                                <i class="fas fa-shopping-cart">
+                                </i>
+                            </button>
+                            <i class="fas fa-heart favorite">
+                            </i>
+                        </div>
+                        <div class="carousel-item">
+                            <img alt="A 400g can of infant formula milk powder" height="150"
+                                src="https://storage.googleapis.com/a1aa/image/LkafmMYAcTS7XCwtZcAtY5jOiwQ8ejmF7QG0i9c5ZYHQuz5TA.jpg"
+                                width="200" />
+                            <h3>
+                                Infant Formula Milk Powder - 400g
+                            </h3>
+                            <div class="price">
+                                Rs. 1200.00
+                            </div>
+                            <button class="cart-btn">
+                                <i class="fas fa-shopping-cart">
+                                </i>
+                            </button>
+                            <i class="fas fa-heart favorite">
+                            </i>
+                        </div>
+                        <div class="carousel-item">
+                            <img alt="A pack of 3 waterproof baby bibs" height="150"
+                                src="https://storage.googleapis.com/a1aa/image/AKIYyRjwW66eYapeTi6Q4nOjE03Fi45s6jtw3Yzu5HsZuz5TA.jpg"
+                                width="200" />
+                            <h3>
+                                Waterproof Baby Bibs - Pack of 3
+                            </h3>
+                            <div class="price">
+                                Rs. 450.00
+                            </div>
+                            <button class="cart-btn">
+                                <i class="fas fa-shopping-cart">
+                                </i>
+                            </button>
+                            <i class="fas fa-heart favorite">
+                            </i>
+                        </div>
+                        <div class="carousel-item">
+                            <img alt="A soft silicone baby teether" height="150"
+                                src="https://storage.googleapis.com/a1aa/image/4K5DXTSMkCqGMli5nDaIETWGNh5QkHzNu89QtzMAh8yk7ceJA.jpg"
+                                width="200" />
+                            <h3>
+                                Soft Silicone Baby Teether
+                            </h3>
+                            <div class="price">
+                                Rs. 350.00
+                            </div>
+                            <button class="cart-btn">
+                                <i class="fas fa-shopping-cart">
+                                </i>
+                            </button>
+                            <i class="fas fa-heart favorite">
+                            </i>
+                        </div>
+                        <div class="carousel-item">
+                            <img alt="A 200g bottle of talc-free baby powder" height="150"
+                                src="https://storage.googleapis.com/a1aa/image/EDpDHZbvVMaVBZi5lgjvybtehgBfk5ZGAUi3eyHvq5KvcnznA.jpg"
+                                width="200" />
+                            <h3>
+                                Talc-Free Baby Powder 200g
+                            </h3>
+                            <div class="price">
+                                Rs. 250.00
+                            </div>
+                            <button class="cart-btn">
+                                <i class="fas fa-shopping-cart">
+                                </i>
+                            </button>
+                            <i class="fas fa-heart favorite">
+                            </i>
+                        </div>
+                        <div class="carousel-item">
+                            <img alt="A soft cotton baby blanket" height="150"
+                                src="https://storage.googleapis.com/a1aa/image/h5ajG7bY2e2ZFCrxe0fFNatuQhOcX9LeSA2QEfXRqbdKydOfE.jpg"
+                                width="200" />
+                            <h3>
+                                Soft Cotton Baby Blanket
+                            </h3>
+                            <div class="price">
+                                Rs. 950.00
+                            </div>
+                            <button class="cart-btn">
+                                <i class="fas fa-shopping-cart">
+                                </i>
+                            </button>
+                            <i class="fas fa-heart favorite">
+                            </i>
+                        </div>
+                    </div>
+                       
+                </div>
+
+
+
+
+
+
+                <div class="container">
+                    <div class="header">
+                        <h1>Health & Beauty</h1>
+                    </div>
+                    <div class="banner5"></div>
+                    
+                </div>
+                <div class="container">
+                    <div class="header">
+                    </div>
+                    <div class="carousel-container">
+                        <div class="carousel">
+                            <div class="carousel-item active">
+                                <img alt="A bottle of Dove shampoo" height="150"
+                                    src="https://storage.googleapis.com/a1aa/image/kDmDtZtFk8rUDdvCIYbmWx50hgAwPCzmfJnBEvTf34GO2z5TA.jpg"
+                                    width="200" />
+                                <h3>
+                                    Dove Shampoo 400ml
+                                </h3>
+                                <div class="price">
+                                    Rs. 350.00
+                                </div>
+                                <button class="cart-btn">
+                                    <i class="fas fa-shopping-cart">
+                                    </i>
+                                </button>
+                                <i class="fas fa-heart favorite">
+                                </i>
+                            </div>
+                            <div class="carousel-item">
+                                <img alt="A tube of Colgate toothpaste" height="150"
+                                    src="https://storage.googleapis.com/a1aa/image/P1DZuFaL0nZSFJDIntOYAfAmCEXE3wzm9sTKR44hJlsf1z5TA.jpg"
+                                    width="200" />
+                                <h3>
+                                    Colgate Toothpaste 100g
+                                </h3>
+                                <div class="price">
+                                    Rs. 120.00
+                                </div>
+                                <button class="cart-btn">
+                                    <i class="fas fa-shopping-cart">
+                                    </i>
+                                </button>
+                                <i class="fas fa-heart favorite">
+                                </i>
+                            </div>
+                            <div class="carousel-item">
+                                <img alt="A bottle of Nivea body lotion" height="150"
+                                    src="https://storage.googleapis.com/a1aa/image/IuaRfe0zmFjCmkPZTIlrg3ciEkd0OOHyxFTE4L94SJuD2z5TA.jpg"
+                                    width="200" />
+                                <h3>
+                                    Nivea Body Lotion 250ml
+                                </h3>
+                                <div class="price">
+                                    Rs. 450.00
+                                </div>
+                                <button class="cart-btn">
+                                    <i class="fas fa-shopping-cart">
+                                    </i>
+                                </button>
+                                <i class="fas fa-heart favorite">
+                                </i>
+                            </div>
+                            <div class="carousel-item">
+                                <img alt="A pack of Gillette razors" height="150"
+                                    src="https://storage.googleapis.com/a1aa/image/ntMIYtUtRlqHBVMVYuEqrPrZh0MjaDyIBwlKEjel2pmF758JA.jpg"
+                                    width="200" />
+                                <h3>
+                                    Gillette Razors Pack of 5
+                                </h3>
+                                <div class="price">
+                                    Rs. 300.00
+                                </div>
+                                <button class="cart-btn">
+                                    <i class="fas fa-shopping-cart">
+                                    </i>
+                                </button>
+                                <i class="fas fa-heart favorite">
+                                </i>
+                            </div>
+                            <div class="carousel-item">
+                                <img alt="A bottle of L'Oreal conditioner" height="150"
+                                    src="https://storage.googleapis.com/a1aa/image/6LI7ALlOYUYkHpILEeqQyR4dLEW8mjeQkIRMRfphWFEYsnznA.jpg"
+                                    width="200" />
+                                <h3>
+                                    L'Oreal Conditioner 200ml
+                                </h3>
+                                <div class="price">
+                                    Rs. 320.00
+                                </div>
+                                <button class="cart-btn">
+                                    <i class="fas fa-shopping-cart">
+                                    </i>
+                                </button>
+                                <i class="fas fa-heart favorite">
+                                </i>
+                            </div>
+                            <div class="carousel-item">
+                                <img alt="A pack of Pampers diapers" height="150"
+                                    src="https://storage.googleapis.com/a1aa/image/jAYvGEC6CBpkGJOyqkcbaW0WtbPtORDvzTQPiB1EV4eD758JA.jpg"
+                                    width="200" />
+                                <h3>
+                                    Pampers Diapers Pack of 20
+                                </h3>
+                                <div class="price">
+                                    Rs. 600.00
+                                </div>
+                                <button class="cart-btn">
+                                    <i class="fas fa-shopping-cart">
+                                    </i>
+                                </button>
+                                <i class="fas fa-heart favorite">
+                                </i>
+                            </div>
+                            <div class="carousel-item active">
+                                <img alt="A bottle of Vaseline petroleum jelly" height="150"
+                                    src="https://storage.googleapis.com/a1aa/image/gr2K5E7OWJ6FMtbeP2EBiVBkjm1lsxcui2A8Nf1b2RvF2z5TA.jpg"
+                                    width="200" />
+                                <h3>
+                                    Vaseline Petroleum Jelly 100g
+                                </h3>
+                                <div class="price">
+                                    Rs. 150.00
+                                </div>
+                                <button class="cart-btn">
+                                    <i class="fas fa-shopping-cart">
+                                    </i>
+                                </button>
+                                <i class="fas fa-heart favorite">
+                                </i>
+                            </div>
+                            <div class="carousel-item">
+                                <img alt="A bottle of Dettol hand wash" height="150"
+                                    src="https://storage.googleapis.com/a1aa/image/hBEYq0SOnmpWDBLZTI2o13Ck2padZUKomuQjAfd9sBHB758JA.jpg"
+                                    width="200" />
+                                <h3>
+                                    Dettol Hand Wash 250ml
+                                </h3>
+                                <div class="price">
+                                    Rs. 180.00
+                                </div>
+                                <button class="cart-btn">
+                                    <i class="fas fa-shopping-cart">
+                                    </i>
+                                </button>
+                                <i class="fas fa-heart favorite">
+                                </i>
+                            </div>
+                            <div class="carousel-item">
+                                <img alt="A pack of Always sanitary pads" height="150"
+                                    src="https://storage.googleapis.com/a1aa/image/j18K2Tf1pZyuJ6AUtB2wUWjOSjuYYyqdaRW8wKGplIiA758JA.jpg"
+                                    width="200" />
+                                <h3>
+                                    Always Sanitary Pads Pack of 10
+                                </h3>
+                                <div class="price">
+                                    Rs. 200.00
+                                </div>
+                                <button class="cart-btn">
+                                    <i class="fas fa-shopping-cart">
+                                    </i>
+                                </button>
+                                <i class="fas fa-heart favorite">
+                                </i>
+                            </div>
+                            <div class="carousel-item">
+                                <img alt="A bottle of Garnier face wash" height="150"
+                                    src="https://storage.googleapis.com/a1aa/image/xHNCERSzsFbwLlfAfE9NpK8nywtdkcf5G9hBfeFK7xWxweceJA.jpg"
+                                    width="200" />
+                                <h3>
+                                    Garnier Face Wash 150ml
+                                </h3>
+                                <div class="price">
+                                    Rs. 250.00
+                                </div>
+                                <button class="cart-btn">
+                                    <i class="fas fa-shopping-cart">
+                                    </i>
+                                </button>
+                                <i class="fas fa-heart favorite">
+                                </i>
+                            </div>
+                            <div class="carousel-item">
+                                <img alt="A bottle of Pantene shampoo" height="150"
+                                    src="https://storage.googleapis.com/a1aa/image/VaFy1yBeu5xdZ6Lmg3yFgEekE6nA38IWo9oveaJUM5ekYPnPB.jpg"
+                                    width="200" />
+                                <h3>
+                                    Pantene Shampoo 400ml
+                                </h3>
+                                <div class="price">
+                                    Rs. 350.00
+                                </div>
+                                <button class="cart-btn">
+                                    <i class="fas fa-shopping-cart">
+                                    </i>
+                                </button>
+                                <i class="fas fa-heart favorite">
+                                </i>
+                            </div>
+                            <div class="carousel-item">
+                                <img alt="A bottle of Neutrogena sunscreen" height="150"
+                                    src="https://storage.googleapis.com/a1aa/image/WeFKEG6TNQygUazZawO7hFgQqvY5yt4WZxsF0SgZDotG758JA.jpg"
+                                    width="200" />
+                                <h3>
+                                    Neutrogena Sunscreen 100ml
+                                </h3>
+                                <div class="price">
+                                    Rs. 500.00
+                                </div>
+                                <button class="cart-btn">
+                                    <i class="fas fa-shopping-cart">
+                                    </i>
+                                </button>
+                                <i class="fas fa-heart favorite">
+                                </i>
+                            </div>
+                            <div class="carousel-item">
+                                <img alt="A bottle of Clean &amp; Clear face wash" height="150"
+                                    src="https://storage.googleapis.com/a1aa/image/5iIblh7OuOb9JBoQZayYuvBGbOjGqtVi4ZWSybURuMZf658JA.jpg"
+                                    width="200" />
+                                <h3>
+                                    Clean &amp; Clear Face Wash 150ml
+                                </h3>
+                                <div class="price">
+                                    Rs. 220.00
+                                </div>
+                                <button class="cart-btn">
+                                    <i class="fas fa-shopping-cart">
+                                    </i>
+                                </button>
+                                <i class="fas fa-heart favorite">
+                                </i>
+                            </div>
+                            <div class="carousel-item">
+                                <img alt="A bottle of Himalaya face cream" height="150"
+                                    src="https://storage.googleapis.com/a1aa/image/KVKQ4qRA4fTSJSxtfEJeoDN4sikWtQIHfZLhJQiGr2GwXPnPB.jpg"
+                                    width="200" />
+                                <h3>
+                                    Himalaya Face Cream 50g
+                                </h3>
+                                <div class="price">
+                                    Rs. 180.00
+                                </div>
+                                <button class="cart-btn">
+                                    <i class="fas fa-shopping-cart">
+                                    </i>
+                                </button>
+                                <i class="fas fa-heart favorite">
+                                </i>
+                            </div>
+                            <div class="carousel-item">
+                                <img alt="A bottle of Johnson's baby oil" height="150"
+                                    src="https://storage.googleapis.com/a1aa/image/M2kxrjg9h16pP1eIUffV7KAQKOkUEKDwo77elXRXZDzjYPnPB.jpg"
+                                    width="200" />
+                                <h3>
+                                    Johnson's Baby Oil 200ml
+                                </h3>
+                                <div class="price">
+                                    Rs. 250.00
+                                </div>
+                                <button class="cart-btn">
+                                    <i class="fas fa-shopping-cart">
+                                    </i>
+                                </button>
+                                <i class="fas fa-heart favorite">
+                                </i>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="container">
+        <div class="header">
+            <h1>Home Care</h1>
+        </div>
+        <div class="banner6"></div>
+        
+    </div>
+    <div class="container">
+        <div class="header">
+        </div>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item active">
+                    <img alt="A bottle of Dove shampoo" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/YGIjInb38NZTGpVGvGeLV77SMgnbV9RS17UwewKtA4bSP05TA.jpg"
+                        width="200" />
+                    <h3>
+                        Dove Shampoo 400ml
+                    </h3>
+                    <div class="price">
+                        Rs. 350.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A tube of Colgate toothpaste" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/Lxeo5bqk2NVTCiVOqf0RrobIKndXxIyBJ3bbgJxDA2NWP05TA.jpg"
+                        width="200" />
+                    <h3>
+                        Colgate Toothpaste 100g
+                    </h3>
+                    <div class="price">
+                        Rs. 120.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Nivea body lotion" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/lSqtyAXZXYJUN5o87fhvxd9GjFWbqugepBoEeMxfIe6f6DdeJA.jpg"
+                        width="200" />
+                    <h3>
+                        Nivea Body Lotion 250ml
+                    </h3>
+                    <div class="price">
+                        Rs. 450.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A pack of Gillette razors" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/7qWMdtIeiuRjYSdhEsIkaVpam9AYVBxe0nbawzjla1dnP05TA.jpg"
+                        width="200" />
+                    <h3>
+                        Gillette Razors Pack of 5
+                    </h3>
+                    <div class="price">
+                        Rs. 300.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of L'Oreal conditioner" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/mSS7usO0PYofBCeLk5Z8L0nQgcKSE25MOvfd4oae4Bwj9QnPB.jpg"
+                        width="200" />
+                    <h3>
+                        L'Oreal Conditioner 200ml
+                    </h3>
+                    <div class="price">
+                        Rs. 320.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A pack of Pampers diapers" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/rs03rP24fQ1TDauk5YsmOS0siaOoY9fU3VPJQnowX2YeeQnPB.jpg"
+                        width="200" />
+                    <h3>
+                        Pampers Diapers Pack of 20
+                    </h3>
+                    <div class="price">
+                        Rs. 600.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Vaseline petroleum jelly" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/zRwnIFljf50mM6NfMPcrpiPSeKM2y9SGcu2CK1EHdCmneQnPB.jpg"
+                        width="200" />
+                    <h3>
+                        Vaseline Petroleum Jelly 100g
+                    </h3>
+                    <div class="price">
+                        Rs. 150.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Dettol hand wash" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/mYLWymfoNS31cCeAr0AfVW4QDcPe7JyfPnmDjcIGlxUU8hOfE.jpg"
+                        width="200" />
+                    <h3>
+                        Dettol Hand Wash 250ml
+                    </h3>
+                    <div class="price">
+                        Rs. 180.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A pack of Always sanitary pads" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/vibYe1HAkPXuWqZE5n7Q6uZmSBiKdMU19SrHI4dbMCq8H68JA.jpg"
+                        width="200" />
+                    <h3>
+                        Always Sanitary Pads Pack of 10
+                    </h3>
+                    <div class="price">
+                        Rs. 200.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Garnier face wash" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/nyne9qLDjzRBMajn4S6uRZZ53YLWSG1XTtiFSa4AEr23H68JA.jpg"
+                        width="200" />
+                    <h3>
+                        Garnier Face Wash 150ml
+                    </h3>
+                    <div class="price">
+                        Rs. 250.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Pantene shampoo" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/Z1wqEi3Q2A6BEZbl6cjjVKpzzhA7uTx92Rf7QNbUZX2sH68JA.jpg"
+                        width="200" />
+                    <h3>
+                        Pantene Shampoo 400ml
+                    </h3>
+                    <div class="price">
+                        Rs. 350.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Neutrogena sunscreen" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/yedkUPInBvU6YKCafTufOjL9ko2Cgdae3I0D8Pd6N9VWfhOfE.jpg"
+                        width="200" />
+                    <h3>
+                        Neutrogena Sunscreen 100ml
+                    </h3>
+                    <div class="price">
+                        Rs. 500.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Clean &amp; Clear face wash" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/GLcLXIwxJoqbPFPGVUSSTYd9Wvnd9JVqFze1aficaqOsP05TA.jpg"
+                        width="200" />
+                    <h3>
+                        Clean &amp; Clear Face Wash 150ml
+                    </h3>
+                    <div class="price">
+                        Rs. 220.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Himalaya face cream" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/SITx1Z6UJnoPKxvbvV1K93mGM4CDiYi3DZfwfMaLlOcRP05TA.jpg"
+                        width="200" />
+                    <h3>
+                        Himalaya Face Cream 50g
+                    </h3>
+                    <div class="price">
+                        Rs. 180.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Johnson's baby oil" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/j0q7PZoOml4pFBzQfBteZjbCdVaq4xBGUWqdRoyblKH4P05TA.jpg"
+                        width="200" />
+                    <h3>
+                        Johnson's Baby Oil 200ml
+                    </h3>
+                    <div class="price">
+                        Rs. 250.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Dove body wash" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/VTrzUFOfxRygNiKy16j7OCAneIyfnNDBu91JEkTHQqwnfQnPB.jpg"
+                        width="200" />
+                    <h3>
+                        Dove Body Wash 500ml
+                    </h3>
+                    <div class="price">
+                        Rs. 400.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Head &amp; Shoulders shampoo" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/fF243qxY2yxdDiVAMb7W55OPK8rxGOJZfUyXou25iIF6P05TA.jpg"
+                        width="200" />
+                    <h3>
+                        Head &amp; Shoulders Shampoo 400ml
+                    </h3>
+                    <div class="price">
+                        Rs. 350.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Sunsilk conditioner" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/rBSVl6Oy62KpEt2psWYM2pIazpuG1Mm4rdKliBw8hkH8DdeJA.jpg"
+                        width="200" />
+                    <h3>
+                        Sunsilk Conditioner 200ml
+                    </h3>
+                    <div class="price">
+                        Rs. 300.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Vaseline body lotion" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/xl4uP4c1U0KjOl6gEKxSsCBceAr1qu8cQDexC6F5DX4bP05TA.jpg"
+                        width="200" />
+                    <h3>
+                        Vaseline Body Lotion 400ml
+                    </h3>
+                    <div class="price">
+                        Rs. 350.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Olay face cream" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/RO9Wdg6TNCamH5b8BoaHAeUMfv5iiCXGBJOIrFLzrgUtP05TA.jpg"
+                        width="200" />
+                    <h3>
+                        Olay Face Cream 50g
+                    </h3>
+                    <div class="price">
+                        Rs. 500.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Ponds face wash" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/x7al9SCSfE2teEULnGKavNBUnFXNecBwfjMPGoz7gjrlehOfE.jpg"
+                        width="200" />
+                    <h3>
+                        Ponds Face Wash 100g
+                    </h3>
+                    <div class="price">
+                        Rs. 200.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Nivea deodorant" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/cK3sNR5sX0alAFbe5VOfoxTQRkWLSPXLk3ELAyRhXKAjP05TA.jpg"
+                        width="200" />
+                    <h3>
+                        Nivea Deodorant 150ml
+                    </h3>
+                    <div class="price">
+                        Rs. 250.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Garnier hair color" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/wxVU4H8jeE1IMCHkrC28MeKhRbl4LYyxPbv2Fp7VA3slP05TA.jpg"
+                        width="200" />
+                    <h3>
+                        Garnier Hair Color 100ml
+                    </h3>
+                    <div class="price">
+                        Rs. 300.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of L'Oreal hair serum" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/cvb57fJTJI0FaaKM1fnVoyWxpo5PbNgjkZU2xiNawyhgP05TA.jpg"
+                        width="200" />
+                    <h3>
+                        L'Oreal Hair Serum 100ml
+                    </h3>
+                    <div class="price">
+                        Rs. 400.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Dove deodorant" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/fSTC8KIHedrM20rKCRei1m8vUggnBqI03LQl6VbyTZFifQnPB.jpg"
+                        width="200" />
+                    <h3>
+                        Dove Deodorant 150ml
+                    </h3>
+                    <div class="price">
+                        Rs. 250.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Pantene conditioner" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/cmDbnSKkVso5GB8hwYR6Nbv2tYAJrivrT3OH8OfCZQN7H68JA.jpg"
+                        width="200" />
+                    <h3>
+                        Pantene Conditioner 200ml
+                    </h3>
+                    <div class="price">
+                        Rs. 300.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Clean &amp; Clear moisturizer" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/Yn1YYiogKTYSGB4p2Tg0MPcxaO5yoQfWuNu4thNuAfDoP05TA.jpg"
+                        width="200" />
+                    <h3>
+                        Clean &amp; Clear Moisturizer 100ml
+                    </h3>
+                    <div class="price">
+                        Rs. 200.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Himalaya body lotion" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/wpXl89auX1qFHR1CeCwbrsRDws4zR8verniCCQGPgUshP05TA.jpg"
+                        width="200" />
+                    <h3>
+                        Himalaya Body Lotion 400ml
+                    </h3>
+                    <div class="price">
+                        Rs. 350.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Johnson's baby shampoo" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/U0FrHAWWx7IiNlnOk094uuYNlhfH4zvqy52XyBCSL4VoH68JA.jpg"
+                        width="200" />
+                    <h3>
+                        Johnson's Baby Shampoo 200ml
+                    </h3>
+                    <div class="price">
+                        Rs. 250.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Dove hair serum" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/5ZvK2Q1aj3JzKRCxKTRfbKIab7dGsyefK0PNYC2pH9b4fQnPB.jpg"
+                        width="200" />
+                    <h3>
+                        Dove Hair Serum 100ml
+                    </h3>
+                    <div class="price">
+                        Rs. 400.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Colgate mouthwash" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/X6AqdgZbIcb3NdKWRb6SwkA0i3cu1N1kY7Qx1tP3fwAzH68JA.jpg"
+                        width="200" />
+                    <h3>
+                        Colgate Mouthwash 250ml
+                    </h3>
+                    <div class="price">
+                        Rs. 200.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Nivea face wash" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/y8reTBoU0xzMQ6hDXiGIrHe9YdASQZcLZMSqw46W9QPdP05TA.jpg"
+                        width="200" />
+                    <h3>
+                        Nivea Face Wash 150ml
+                    </h3>
+                    <div class="price">
+                        Rs. 250.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Garnier moisturizer" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/l6iwGE4xShoIMZxQvHkU3Z4XGQWjdPNdTeSGCJalMKZ5H68JA.jpg"
+                        width="200" />
+                    <h3>
+                        Garnier Moisturizer 100ml
+                    </h3>
+                    <div class="price">
+                        Rs. 300.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of L'Oreal face wash" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/C66CZXzy5pLNAFUJ3b8kRhmclUuoHqdfI8OFxsX0RO1qH68JA.jpg"
+                        width="200" />
+                    <h3>
+                        L'Oreal Face Wash 150ml
+                    </h3>
+                    <div class="price">
+                        Rs. 250.00
+                    </div>
+                    <button class="cart-btn">
+                        <i class="fas fa-shopping-cart">
+                        </i>
+                    </button>
+                    <i class="fas fa-heart favorite">
+                    </i>
+                </div>
+                <div class="carousel-item">
+                    <img alt="A bottle of Dove body lotion" height="150"
+                        src="https://storage.googleapis.com/a1aa/image/ZLQ60husa2aBAFHW3wyrk0eUcYYwF08bfNozrdFslCpXP05TA.jpg"
+                        width="200" />
+                    <h3>
+                        Dove Body Lotion 400ml&lt;/h
+                    </h3>
+                </div>
+            
+                
+              
+                
+        </div>
+    </div>
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section footer-logo">
+                <img alt="Company Logo - A stylized representation of the company logo with the text 'Imtiaz' in bold letters"
+                    height="50"
+                    src="https://storage.googleapis.com/a1aa/image/dr7P7VGeNT2AHiM7FBy6HMtYPHwk9INsd29oH9L8nyo3Be5TA.jpg"
+                    width="150" />
+            </div>
+            <div class="footer-section">
+                <h3>
+                    Contact Us
+                </h3>
+                <p>
+                    Phone: 021-111468429
+                </p>
+                <p>
+                    Email: hello@imtiaz.com.pk
+                </p>
+                <p>
+                    Address: Imtiaz - Warehouse Korangi (ISM-KHI-DWH-001), Sector 14, Korangi, Karachi
+                </p>
+                <p>
+                    UAN: 021-111-468-429 (IMT-IAZ)
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>
+                    Our Policies
+                </h3>
+                <p>
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+                </p>
+                <p>
+                    <a href="#">
+                        Return and Exchange Policy
+                    </a>
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>
+                    Follow Us:
+                </h3>
+                <div class="footer-social-icons">
+                    <a href="#">
+                        <i class="fab fa-facebook-f">
+                        </i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-twitter">
+                        </i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-instagram">
+                        </i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
